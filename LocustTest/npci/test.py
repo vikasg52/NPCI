@@ -3,22 +3,9 @@ from locust import FastHttpUser, task, between
 
 class MyUser(FastHttpUser):
     wait_time = between(1, 2)
-    host = "http://localhost:5000"
+    host = "http://20.204.37.128:8081"
 
     @task
-    def launch_url(self):
-        resp = self.client.get("/users/list", name="getUser")
-        print(resp.text)
-        print(resp.status_code)
-        print(resp.headers)
-
-    # @task
-    # def login_test(self):
-    #     resp1 = self.client.post("/test/newtours/login.php", name="login",
-    #                             data={"action": "process", "userName": "vikas", "password": "master123",
-    #                                   "login.x": "41",
-    #                                   "login.y": "12"
-    #                                   })
-    #     print(resp1.text)
-    #     print(resp1.status_code)
-    #     print(resp1.headers)
+    def get_user_by_id(self):
+        resp = self.client.get("/aadhar/8092ba57-b825-45b3-8c23-7aa6f0428d48", name="getUser")
+        print("Response status", resp.status_code)
