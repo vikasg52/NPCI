@@ -8,4 +8,4 @@ execution:
 scenarios:
   example:
     default-address: http://20.204.37.128:8081
-    script: locust.py
+    script: test.py
