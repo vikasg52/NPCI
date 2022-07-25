@@ -1,8 +1,8 @@
 execution:
 - executor: locust
-  concurrency: 1000
-  ramp-up: 120s
-  iterations: 100
+  concurrency: 10000
+  ramp-up: 240s
+  iterations: 1000
   scenario: example
 
 scenarios:
